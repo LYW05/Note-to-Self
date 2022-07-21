@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAdd } from "@fortawesome/free-solid-svg-icons";
 
 function Create(props) {
 
@@ -9,7 +11,6 @@ function Create(props) {
 
 function handleChange(e) {
   const {name, value} = e.target;
-
   setNote(prevNote => {
       return {
           ...prevNote,
@@ -41,7 +42,7 @@ function submitNote(e) {
                     placeholder="Take a note..." 
                     rows="3"
                 />
-                <button onCLick={submitNote}>Add</button>
+                <button onClick={submitNote}><FontAwesomeIcon icon={faAdd} /></button>
             </form>
         </div>
     );
